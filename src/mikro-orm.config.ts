@@ -3,6 +3,7 @@ import { __prod__ } from "./constants";
 import { MikroORM } from "@mikro-orm/core";
 import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
 import path from "path";
+import { User } from "./entities/User";
 
 export default {
   migrations: {
@@ -10,7 +11,7 @@ export default {
     pattern: /^[\w-]+\d+\.[tj]s$/,
   },
   metadataProvider: TsMorphMetadataProvider,
-  entities: [Post],
+  entities: [Post, User],
   dbName: "postgres",
   password: "elephant",
   type: "postgresql",
